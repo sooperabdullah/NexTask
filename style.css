@@ -1,0 +1,604 @@
+/* style.css */
+@font-face {
+    font-family: ADLam Display;
+    src: url(ADLaMDisplay-Regular.ttf);
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ADLam Display;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position:fixed; 
+    top: 0; /* Aligns it to the top */
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: rgba(255, 71, 99, 0);
+    transition: top 0.3s ease-out; /* Smooth hiding effect */
+  }
+  
+  /* Content below navbar */
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #253e64;  /* Custom color */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: var(--menu_font_size);
+    font-weight: lighter;  /* Make links bold */
+    color: #253e64; 
+    text-transform: var(--menu_type_text);
+    letter-spacing: var(--menu_spacing);
+    padding: 37.5px var(--padding-menu);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Hover color change */
+.nav-links a:hover {
+    color: #253e64; /* Or use a variable if preferred */
+}
+
+/* Line hover effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #253e64;  /* Color on hover */
+    transition: width 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Search Container Styling */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d; /* Enables 3D transformations */
+}
+
+/* Search Icon Styling with 3D Effect */
+.fa-search {
+    font-size: 1.3rem;
+    color: #253e64;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease, color 0.3s, box-shadow 0.3s;
+}
+
+/* Initial State of Search Input (Hidden) */
+.search-input {
+    width: 0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+/* Show input when active */
+.search-container.active .search-input {
+    width: 180px;
+    opacity: 1;
+    padding: 5px 10px;
+}
+
+/* Change Icon Color and Add Hover Effects */
+.search-container.active .fa-search {
+    color: #253e64;
+    font-weight: bold;
+    transform: scale(1.1) translateZ(10px);
+}
+
+
+/* Styling for the login and signup buttons with theme color */
+.btn-sec {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #f9fafb; /* Dark text on vibrant background */
+    background-color: #253e64; /* Neon teal for the button background */
+    border: none; /* Border matches the button color for a cohesive look */
+    border-radius: 8px; /* Slightly rounded corners */
+    margin: 0 4px; /* Reduced gap between buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease,;
+}
+.btn-sec:hover {
+    background: #1d4ed8;
+}
+
+.navbar .toggle_btn{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #010197;
+    display: none;
+}
+
+/* Dropdown Menu Styles */
+.dropdown_menu {
+    position: fixed; /* Fixed position for the menu */
+    right: -300px; /* Start off-screen to the right */
+    top: 0;
+    width: 300px;
+    height: 100%; /* Full height for a sliding drawer effect */
+    background: #ffffff; /* Solid white background */
+    overflow: hidden;
+    display: block; /* Always present, visibility controlled via transform */
+    box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.2); /* Shadow for elevation */
+    transform: translateX(0); /* Start position off-screen */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    z-index: 100; /* Ensure it stays on top */
+    padding-top: 2rem; /* Add padding at the top for content spacing */
+}
+
+/* Class for opening the menu */
+.dropdown_menu.open {
+    transform: translateX(-300px); /* Slides into view */
+}
+
+/* Close button styling */
+.dropdown_menu .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.dropdown_menu .close-btn:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* List item styling */
+.dropdown_menu ul {
+    margin-top: 3rem; /* Move the list down */
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.dropdown_menu li {
+    text-decoration: solid;
+    list-style: none;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0; /* Separator between items */
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: #010197; /* Dark link color */
+    font-size: 1rem;
+}
+
+/* Search container styling */
+.dropdown_menu .search {
+    width: 90%;
+    padding: 0.7rem;
+    margin: 1rem auto;
+    border: 1px solid #000000; /* Light gray border */
+    border-radius: 5px;
+    outline: none;
+}
+
+/* "Get Started" button at the bottom */
+.dropdown_menu .btn-sec {
+    position: absolute;
+    bottom: 1rem; /* Positioned at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #253e64;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.dropdown_menu .btn-sec:hover {
+    background-color: #010197;
+}
+.close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #010197;
+}
+
+.close_btn:hover {
+    color: #ff0000; /* Optional hover effect */
+}
+
+/* Hide navbar items on small screens */
+@media (max-width: 953px) {
+    .navbar .nav-links {
+        display: none;
+    }
+    .navbar .search-input {
+        display: none;
+    }
+    .navbar .toggle_btn {
+        display: block;
+    }
+    
+}
+
+
+
+/* Hero section */
+.hero {
+    min-height: 100vh;
+    background: url('bannerhome.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+
+.hero-content {
+    max-width: 800px;
+    margin-bottom: 100px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #253e64;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #253e64;
+}
+
+/* cities styling */
+.service-cities {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.service-cities h2 {
+    font-size: 2.2rem;
+}
+
+.section-desc {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.city-card {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.city-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.city-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.6);
+}
+
+.city-name {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.city-card:hover .city-name {
+    opacity: 1;
+}
+
+
+/* how-it-works */
+.how-it-works {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.how-it-works h2 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Steps container with connectors */
+.steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.steps .step-icon {
+    color: white;
+}
+
+/* Connector line */
+.connector {
+    width: 40px;
+    height: 4px;
+    background-color: #ddd;
+}
+
+@media (max-width: 953px) {
+    .connector {
+        display: none; /* Hide connector lines on mobile */
+    }
+}
+
+/* Step styles */
+.step {
+    width: 180px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Icon styles */
+.step-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    background-color: #007bff;
+    color: #fff;
+    margin: 0 auto 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.step:hover .step-icon {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.step h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.step p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
+/* Testimonials section */
+.testimonials {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    
+}
+
+.testimonials h2 {
+    font-size: 2.2rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.testimonial-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.rating {
+    color: #fbbf24;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    background-color: #253e64; /* Dark background */
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+}
+
+.footer .social-icons {
+    margin-bottom: 20px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #919191; /* Gray color on hover */
+}
+
+.footer .links {
+    margin-top: 15px;
+}
+
+.footer .links a {
+    margin: 0 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer .links a:hover {
+    color: #919191; /* Gray color on hover */
+}
+
+/* Responsive Design */
+
+/* Responsive Hero Section */
+@media (max-width: 953px) {
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Align text centrally for smaller screens */
+    .hero-content {
+        padding: 0 1rem;
+    }
+}
+
+/* Responsive Grid Layouts */
+@media (max-width: 953px) {
+    .city-grid, .steps, .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Footer */
+@media (max-width: 953px) {
+    .footer .social-icons a {
+        font-size: 20px; /* Smaller icons */
+    }
+
+    .footer p {
+        font-size: 10px; /* Smaller text */
+    }
+}
+
+@media (max-width: 953px) {
+    .footer .social-icons a {
+        font-size: 18px;
+    }
+
+    .footer p {
+        font-size: 9px;
+    }
+}

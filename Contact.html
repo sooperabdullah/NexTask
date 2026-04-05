@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style3.css">
+
+</head>
+
+<body>
+    <br><br>
+    <!-- Navbar HTML -->
+    <!-- Navbar HTML -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fa-solid fa-wrench"></i>
+                <span>NexTask</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="appointment.html">Book an Appointment</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li>
+                    <div class="search-container">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input type="text" class="search-input" placeholder="Search...">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-sec" onclick="window.location.href='login.html';">Get
+                        Started</button>
+                </li>
+            </ul>
+
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars-progress"></i>
+            </div>
+            <div class="dropdown_menu">
+                <div class="close_btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <i class="fa-solid fa-wrench"></i>
+                            <span>NexTask</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="text" class="search" placeholder="Search...">
+                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="appointment.html">Book an Appointment</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li>
+                        <button class="btn-sec" onclick="window.location.href='login.html';">Get
+                            Started</button>
+                    </li>
+                </ul>
+            </div>
+
+    </nav>
+
+
+    <div class="statement">
+        <h1> Need to Reach Us? </h1>
+    </div>
+
+    <div class="contact-container">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form>
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" required placeholder="Please enter first name...">
+
+                <label for="email">Email</label>
+                <input type="email" id="email"  required placeholder="Please enter email...">
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required placeholder="Please enter phone number...">
+
+                <label for="query">What do you have in mind?</label>
+                <textarea id="query" required placeholder="Please enter query..."></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Map and Contact Info -->
+        <div class="contact-info">
+            <h2>Reach us at</h2>
+            <p> We're here to help with your tasks. <br> </p>
+            <p> +92 333 0000000 <br></p>
+            <p> support@nextask.com <br></p>
+            <p> FAST NUCES CFD, Loonaywala Stop. <br></p>
+            <br>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.205382934756!2d73.03317667540928!3d31.60083157417722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39223f08dbbe5fa5%3A0xb45ea8924093c29d!2sFAST%20University%20(Chiniot-Faisalabad%20Campus)!5e0!3m2!1sen!2s!4v1733138239992!5m2!1sen!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><br>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <!-- Brand Name -->
+        <div class="brand">
+            <h2 style="margin: 0; font-size: 3.5em; font-weight: bold;">NexTask</h2>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms and Conditions</a> |
+            <a href="#">Cookie Preferences</a>
+        </div>
+
+        <!-- Copyright Text -->
+        <p style="font-size: 12px; margin-top: 15px;">&copy; 2024 all
+            rights reserved.</p>
+    </div>
+    <script>
+        // Select the necessary DOM elements
+const searchContainer = document.querySelector('.search-container');
+const searchInput = document.querySelector('.search-input');
+const searchIcon = document.querySelector('.fa-search');
+
+// Add a click event listener to the search icon
+searchIcon.addEventListener('click', () => {
+// Toggle the "active" class on the container
+searchContainer.classList.toggle('active');
+
+// If active, focus on the input field
+if (searchContainer.classList.contains('active')) {
+searchInput.style.display = "inline-block";
+searchInput.focus();
+} else {
+searchInput.style.display = "none";
+}
+});
+
+    </script>
+</body>
+
+</html>

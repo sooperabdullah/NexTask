@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Page</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fa-solid fa-wrench"></i>
+                <span>NexTask</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="appointment.html">Book an Appointment</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li>
+                    <div class="search-container">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input type="text" class="search-input"
+                            placeholder="Search...">
+                    </div>
+                </li>
+
+                <li>
+                    <button class="btn-sec" onclick="window.location.href='login.html';">Get
+                        Started</button>
+                </li>
+            </ul>
+
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars-progress"></i>
+            </div>
+            <div class="dropdown_menu">
+                <div class="close_btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul>
+                    <li><div class="logo">
+                        <i class="fa-solid fa-wrench"></i>
+                        <span>NexTask</span>
+                    </div></li>
+                    <li>
+                        <input type="text" class="search"
+                            placeholder="Search....">
+                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="appointment.html">Book an Appointment</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                       <li>
+                        <button class="btn-sec" onclick="window.location.href='login.html';">Get
+                            Started</button>
+                      </li>
+                </ul>
+            </div>
+    </nav>
+
+    <header>
+        <h1> Schedule an Appointment </h1>
+    </header>
+   
+    <div class="formimage"> 
+        <div class="appointment-form">
+            <form action="/submit-appointment" method="post">
+                
+                <!-- Contact Information Section -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Please enter your name...">
+                </div>
+        
+                <div class="form-group">
+                    <label for="contact">Contact No:</label>
+                    <input type="text" id="contact" name="contact" required placeholder="Please enter your contact number...">
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Please enter your email...">
+                </div>
+        
+                <div class="form-group">
+                    <label for="contact-method">Preferred Contact Method:</label>
+                    <select id="contact-method" name="contact-method" required>
+                        <option value="phone">Phone</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+        
+                <!-- Service Selection Section -->
+                <div class="form-group">
+                    <label for="service">Select a Service:</label>
+                    <select id="service" name="service" required>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="woodwork">Woodwork</option>
+                        <option value="electrical">Wiring</option>
+                        <option value="painting">Painting</option>
+                        <option value="Welding">Welding</option>
+                    </select>
+                </div>
+        
+                <!-- Job Description Section -->
+                <div class="form-group">
+                    <label for="description">Describe the Job You Want To Be Done:</label>
+                    <textarea id="description" name="description" rows="4" required placeholder="Please enter the description of your job..."></textarea>
+                </div>
+        
+                <!-- Preferred Date Section -->
+                <div class="form-group">
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+        
+                <!-- Preferred Time Section -->
+                <div class="form-group">
+                    <label for="time">Preferred Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+        
+                <!-- Local Information Section -->
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required placeholder="Please enter your address...">
+                </div>
+        
+                <!-- Payment Options Section -->
+                <div class="form-group checkbox">
+                    <label for="payment-methods">Preferred Payment Method:</label>
+                    <label><input type="radio" name="payment" value="credit"> Credit Card </label>
+                    <label><input type="radio" name="payment" value="cash"> Cash </label>
+                </div>
+        
+                <!-- Terms and Conditions Section -->
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="radio" name="terms" required> I accept the Terms and Conditions and Privacy Policy 
+                    </label>
+                </div>
+        
+                <!-- Schedule Button -->
+                <button type="submit" class="submit-btn">Schedule Appointment</button>
+            </form>
+            </div>
+            <img src="pics/appimage.png" alt="image" class="image">
+    </div>
+
+    <footer>
+        <div class="footer">
+            <br><br><br>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        
+            <!-- Brand Name -->
+            <div class="brand">
+                <h2 style="margin: 0; font-size: 3.5em; font-weight: bold;">NexTask</h2>
+            </div>
+        
+            <!-- Footer Links -->
+            <div class="links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms and Conditions</a> |
+                <a href="#">Cookie Preferences</a>
+            </div>
+        
+            <!-- Copyright Text -->
+            <p style="color: white; font-size: 12px; margin-top: 15px;">&copy; 2024 All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+                // Select the necessary DOM elements
+const searchContainer = document.querySelector('.search-container');
+const searchInput = document.querySelector('.search-input');
+const searchIcon = document.querySelector('.fa-search');
+
+// Add a click event listener to the search icon
+searchIcon.addEventListener('click', () => {
+  // Toggle the "active" class on the container
+  searchContainer.classList.toggle('active');
+
+  // If active, focus on the input field
+  if (searchContainer.classList.contains('active')) {
+    searchInput.style.display = "inline-block";
+    searchInput.focus();
+  } else {
+    searchInput.style.display = "none";
+  }
+});
+    </script>
+</body>
+</html>

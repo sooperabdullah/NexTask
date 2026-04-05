@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexTask</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css\style.css">
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+</head>
+
+<body>
+    <!-- HTML -->
+    <!-- Navbar HTML -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fa-solid fa-wrench"></i>
+                <span>NexTask</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="appointment.html">Book an Appointment</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li>
+                    <div class="search-container">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input type="text" class="search-input" placeholder="Search...">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-sec" onclick="window.location.href='login.html';">Get
+                        Started</button>
+                </li>
+            </ul>
+
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars-progress"></i>
+            </div>
+            <div class="dropdown_menu">
+                <div class="close_btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <i class="fa-solid fa-wrench"></i>
+                            <span>NexTask</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="text" class="search" placeholder="Search...">
+                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="appointment.html">Book an Appointment</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li>
+                        <button class="btn-sec" onclick="window.location.href='login.html';">Get
+                            Started</button>
+                    </li>
+                </ul>
+            </div>
+
+    </nav>
+
+    <section class="home">
+        <header id="home" class="hero">
+            <div class="hero-content">
+                <h1> Bringing Expertise to Every Corner - From Walls to Woodwork! </h1>
+                <p> Ready for What's Next - Bring Us Your Next Project! </p>
+
+            </div>
+        </header>
+        <!--Cities In which we offer services-->
+        <section id="service-cities" class="service-cities">
+            <h2>Our Service Locations</h2>
+            <p class="section-desc">Explore the cities where we provide
+                our
+                services</p>
+            <br>
+            <div class="city-grid">
+                <div class="city-card">
+                    <img src="pics/Lahore.webp" alt="Lahore">
+                    <div class="city-name">Lahore</div>
+                </div>
+                <div class="city-card">
+                    <img src="pics/Karachi.webp" alt="Karachi">
+                    <div class="city-name">Karachi</div>
+                </div>
+                <div class="city-card">
+                    <img src="pics/Islamabad.webp" alt="Islamabad">
+                    <div class="city-name">Islamabad</div>
+                </div>
+                <div class="city-card">
+                    <img src="pics\Faisalabad.webp" alt="Faisalabad">
+                    <div class="city-name">Faisalabad</div>
+                </div>
+                <!-- Add more cities as needed -->
+            </div>
+        </section>
+        <!-- how-it-works -->
+        <section id="how-it-works" class="how-it-works">
+            <h2>Book an Appointment</h2>
+            <p class="section-desc">Simple steps to get your service
+                done</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                        <!-- Font Awesome icon for "Find a Service" -->
+                    </div>
+                    <h3>Find a Service</h3>
+                    <p>Browse through our wide range of services.</p>
+                </div>
+                <div class="connector"></div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <!-- Font Awesome icon for "Book Appointment" -->
+                    </div>
+                    <h3>Book Appointment</h3>
+                    <p>Choose your preferred time and date.</p>
+                </div>
+                <div class="connector"></div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                        <!-- Font Awesome icon for "Get it Done" -->
+                    </div>
+                    <h3>Get it Done</h3>
+                    <p>Sit back while we handle your request.</p>
+                </div>
+            </div>
+        </section>
+        <!-- testimonials" -->
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Customers Say</h2><br><br><br>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="pics/image1.jpg" alt="Guess me">
+                        <div>
+                            <h3>Alexa</h3>
+                            <p>Plumbing</p>
+                        </div>
+                    </div>
+                    <p>Amazing service! The plumber was professional and
+                        thorough. My pipes have never been so clean.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="pics/image2.jpg" alt="Bobzy">
+                        <div>
+                            <h3>Babar Azam</h3>
+                            <p>Painter</p>
+                        </div>
+                    </div>
+                    <p>Gave an astonishing look to my new house. Would definitely recommend!</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer"><br>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <!-- Brand Name -->
+            <div class="brand">
+                <h2 style="margin: 0; font-size: 3.5em; font-weight: bold;">NexTask</h2>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms and Conditions</a> |
+                <a href="#">Cookie Preferences</a>
+            </div>
+
+            <!-- Copyright Text -->
+            <p style="font-size: 12px; margin-top: 15px;">&copy; 2024
+                All Rights Reserved.</p>
+        </div>
+
+        <script src="js/scripts.js"> </script>
+</body>
+
+</html>

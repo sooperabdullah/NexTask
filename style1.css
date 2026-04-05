@@ -1,0 +1,514 @@
+/* style.css */
+@font-face {
+    font-family: ADLam Display;
+    src: url(ADLaMDisplay-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ADLam Display;
+}
+
+body {
+    background-color: white;
+}
+
+/* Navbar */
+/* Basic styling for the navigation bar */
+.navbar {
+    position: fixed; /* Makes it sticky */
+    top: 0; /* Aligns it to the top */
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #f9f9f9;
+    z-index: 1000; /* Keeps it above other content */
+    transition: top 0.3s ease; /* Smooth hiding effect */
+  }
+  
+  /* Content below navbar */
+  body {
+    margin-top: 60px; /* Adjust based on navbar height */
+  }
+  
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #253e64;  /* Custom color */
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: var(--menu_font_size);
+    font-weight: bold;  /* Make links bold */
+    color: #253e64; 
+    text-transform: var(--menu_type_text);
+    letter-spacing: var(--menu_spacing);
+    padding: 37.5px var(--padding-menu);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: padding 0.3s ease;
+    font-weight: lighter;
+}
+
+/* Hover color change */
+.nav-links a:hover {
+    color: #253e64; /* Or use a variable if preferred */
+}
+
+/* Line hover effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #253e64;  /* Color on hover */
+    transition: width 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Search Container Styling */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d; /* Enables 3D transformations */
+}
+
+/* Search Icon Styling with 3D Effect */
+.fa-search {
+    font-size: 1.3rem;
+    color: #253e64;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease, color 0.3s, box-shadow 0.3s;
+}
+
+/* Initial State of Search Input (Hidden) */
+.search-input {
+    width: 0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+/* Show input when active */
+.search-container.active .search-input {
+    width: 180px;
+    opacity: 1;
+    padding: 5px 10px;
+}
+
+/* Change Icon Color and Add Hover Effects */
+.search-container.active .fa-search {
+    color: #253e64;
+    font-weight: bold;
+    transform: scale(1.1) translateZ(10px);
+}
+
+
+/* Styling for the login and signup buttons with theme color */
+.btn-sec {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #f9fafb; /* Dark text on vibrant background */
+    background-color: #253e64; /* Neon teal for the button background */
+    border: none; /* Border matches the button color for a cohesive look */
+    border-radius: 8px; /* Slightly rounded corners */
+    margin: 0 4px; /* Reduced gap between buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease,;
+}
+.btn-sec:hover {
+    background-color: #1919b0;
+}
+
+.navbar .toggle_btn{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #253e64;
+    display: none;
+}
+
+/* Dropdown Menu Styles */
+.dropdown_menu {
+    position: fixed; /* Fixed position for the menu */
+    right: -300px; /* Start off-screen to the right */
+    top: 0;
+    width: 300px;
+    height: 100%; /* Full height for a sliding drawer effect */
+    background: #ffffff; /* Solid white background */
+    overflow: hidden;
+    display: block; /* Always present, visibility controlled via transform */
+    box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.2); /* Shadow for elevation */
+    transform: translateX(0); /* Start position off-screen */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    z-index: 100; /* Ensure it stays on top */
+    padding-top: 2rem; /* Add padding at the top for content spacing */
+}
+
+/* Class for opening the menu */
+.dropdown_menu.open {
+    transform: translateX(-300px); /* Slides into view */
+}
+
+/* Close button styling */
+.dropdown_menu .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.dropdown_menu .close-btn:hover {
+    color: #253e64; /* Change color on hover */
+}
+
+/* List item styling */
+.dropdown_menu ul {
+    margin-top: 3rem; /* Move the list down */
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.dropdown_menu li {
+    text-decoration: solid;
+    list-style: none;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0; /* Separator between items */
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: #253e64; /* Dark link color */
+    font-size: 1rem;
+}
+
+/* Search container styling */
+.dropdown_menu .search {
+    width: 90%;
+    padding: 0.7rem;
+    margin: 1rem auto;
+    border: 1px solid #000000; /* Light gray border */
+    border-radius: 5px;
+    outline: none;
+}
+
+/* "Get Started" button at the bottom */
+.dropdown_menu .btn-sec {
+    position: absolute;
+    bottom: 1rem; /* Positioned at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #253e64;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.dropdown_menu .btn-sec:hover {
+    background-color: #253e64;
+}
+.close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #253e64;
+}
+
+.close_btn:hover {
+    color: #ff0000; /* Optional hover effect */
+}
+
+/* Hide navbar items on small screens */
+@media (max-width: 953px) {
+    .navbar .nav-links {
+        display: none;
+    }
+    .navbar .search-input {
+        display: none;
+    }
+    .navbar .toggle_btn {
+        display: block;
+    }
+}
+
+.statement {
+    text-align: center;
+    color: black;
+    height: 100px;
+    margin: 25px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.item, .item1, .item2, .item3, .item4 {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 280px;
+    transition: color 0.1s ease-in;
+    flex-direction: row;
+    transition: background-color 0.1s ease-in;
+    transition: background-color 0.3s ease-out;
+}
+
+.item, .item2, .item4 {
+    flex-direction: row-reverse;
+} 
+
+.item:hover {
+    background-color: rgb(137, 63, 41);
+}
+
+.item:hover p, .item:hover h1, .item4:hover p, .item4:hover h1, .item2:hover p, .item2:hover h1 {
+    color: white;
+}
+
+.item1:hover {
+    background-color: rgb(223, 217, 94);
+}
+
+.item1 .image {
+    height: 470px;
+    margin-bottom: 27px;
+}
+
+.item2:hover {
+    background-color: rgb(0, 123, 255);
+}
+
+.item3:hover {
+    background-color: rgb(199, 50, 50);
+}
+
+.item3 .image {
+    height: 400px;
+}
+
+.item4:hover {
+    background-color: rgb(140, 131, 131);
+}
+
+.item4 .image1 {
+    height: 550px;
+}
+
+.item:hover button, .item1:hover button, .item2:hover button, .item3:hover button, .item4:hover button  {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+}
+
+.text {
+    max-width: 50%;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: lighter;
+}
+
+.button {
+    display: flex;
+    gap: 20px;
+}
+
+.schedule {
+    font-weight: lighter;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: #000;
+}
+
+.item button, .item1 button, .item2 button, .item3 button, .item4 button {
+    transition: background-color 0.5s ease;
+}
+
+.image, .image1 {
+    max-width: 50%;
+    border-radius: 20px;
+    height: 450px;
+}
+
+.item .image1, .item2 .image1 {
+    transform: scaleX(-1);
+}
+
+.footer {
+    background-color: #253e64; /* Dark background */
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+}
+
+.footer .social-icons {
+    margin-bottom: 20px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #919191; /* Gray color on hover */
+}
+
+.footer .links {
+    margin-top: 15px;
+}
+
+.footer .links a {
+    margin: 0 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer .links a:hover {
+    color: #919191; /* Gray color on hover */
+}
+
+/* Responsive design for screens smaller than 953px */
+@media (max-width: 953px) {
+
+    .text p {
+        display: none;
+    }
+    .item, .item1, .item2, .item3, .item4 {
+        flex-direction: row;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .image, .image1 {
+        height: 200px;
+    }
+
+    .image1 {
+        transform: scaleX(1);
+    }
+
+    .text, .image, .image1 {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .button {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .menu-button, .order-now {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+
+    .footer .social-icons a {
+        font-size: 20px;
+    }
+
+    .footer .links a {
+        font-size: 12px;
+    }
+}
